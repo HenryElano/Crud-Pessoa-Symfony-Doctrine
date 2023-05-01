@@ -1,0 +1,30 @@
+{%extends 'base.html.twig'%}
+{%block title%} {{titulo}} {%endblock%}
+{%block body%}
+<h1>{{titulo}}</h1>
+<a href='{{ path('pessoaInserir') }}' class='btn btn-primary'>Incluir Nova Pessoa</a>
+<table class='table'>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>CPF</td>
+            <td>Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% for pessoa in pessoas %}
+        <tr>
+            <td>{{pessoa.id}}</td>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.cpf}}</td>
+            <td>
+                <a href='{{ path('pessoaEditar', {id: pessoa.id}) }}' class='btn btn-primary'>Editar</a>
+                <a href='{{ path('pessoaExcluir', {id: pessoa.id}) }}' class='btn btn-primary'>Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

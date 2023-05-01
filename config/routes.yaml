@@ -1,5 +1,24 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+consultaPessoas:
+    path: /consultaPessoas
+    controller: App\Controller\ControllerPessoa::consultaPessoas
+
+
+pessoaInserir:
+    path: /pessoa/inserir
+    controller: App\Controller\ControllerPessoa::inserir
+
+contato:
+    path: /contato
+    controller: App\Controller\ControllerContato::index
+
+contatoSalvar:
+    path: /contato/salvar
+    controller: App\Controller\ControllerContato::salvar
+
+pessoaEditar:
+    path: /pessoa/editar/{id}
+    controller: App\Controller\ControllerPessoa::editar
+
+pessoaExcluir:
+    path: /pessoa/excluir/{id}
+    controller: App\Controller\ControllerPessoa::excluir
