@@ -2,18 +2,9 @@ consultaPessoas:
     path: /consultaPessoas
     controller: App\Controller\ControllerPessoa::consultaPessoas
 
-
 pessoaInserir:
     path: /pessoa/inserir
     controller: App\Controller\ControllerPessoa::inserir
-
-contato:
-    path: /contato
-    controller: App\Controller\ControllerContato::index
-
-contatoSalvar:
-    path: /contato/salvar
-    controller: App\Controller\ControllerContato::salvar
 
 pessoaEditar:
     path: /pessoa/editar/{id}
@@ -22,3 +13,19 @@ pessoaEditar:
 pessoaExcluir:
     path: /pessoa/excluir/{id}
     controller: App\Controller\ControllerPessoa::excluir
+
+consultaContatos:
+    path: /consultaContatos
+    controller: App\Controller\ControllerContato::consultaContatos
+
+contatoInserir:
+    path: /contato/inserir
+    controller: App\Controller\ControllerContato::inserir
+
+contatoEditar:
+    path: /contato/editar/{id}
+    controller: App\Controller\ControllerContato::editar
+
+contatoExcluir:
+    path: /contato/excluir/{id}
+    controller: App\Controller\ControllerContato::excluir

@@ -3,13 +3,13 @@
 {%block body%}
 <h1>{{titulo}}</h1>
 <a href='{{ path('pessoaInserir') }}' class='btn btn-primary'>Incluir Nova Pessoa</a>
-<table class='table'>
+<table class='table'border="1px solid black">
     <thead>
         <tr>
-            <td>#</td>
-            <td>Nome</td>
-            <td>CPF</td>
-            <td>Ações</td>
+            <td style='font-weight: bold'>Id</td>
+            <td style='font-weight: bold'>Nome</td>
+            <td style='font-weight: bold'>CPF</td>
+            <td style='font-weight: bold'>Ações</td>
         </tr>
     </thead>
     <tbody>
