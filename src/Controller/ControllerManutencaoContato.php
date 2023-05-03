@@ -24,7 +24,7 @@ class ControllerManutencaoContato extends AbstractController {
     public function inserir(Request $oRequest, EntityManagerInterface $oEntity) : Response {
         $oContato = new Contato();
         $this->executaInclusao($oContato, $oRequest, $oEntity);
-        return $this->render('Pessoa/form.html.twig', ['titulo' => 'Adicionar um novo contato', 'form' => $this->getForm($oContato, $oRequest)]);
+        return $this->render('Contato/form.html.twig', ['titulo' => 'Adicionar um novo contato', 'form' => $this->getForm($oContato, $oRequest)]);
     }
 
     /**
@@ -38,7 +38,7 @@ class ControllerManutencaoContato extends AbstractController {
     public function editar($id, Request $oRequest, EntityManagerInterface $oEntity, ContatoRepository $oRepositorioContato) { 
         $oContato = $oRepositorioContato->find($id);
         $this->executaAlteracao($oContato, $oRequest, $oEntity);
-        return $this->render('Pessoa/form.html.twig', ['titulo' => 'Alterar contato', 'form' => $this->getForm($oContato, $oRequest)]);
+        return $this->render('Contato/form.html.twig', ['titulo' => 'Alterar contato', 'form' => $this->getForm($oContato, $oRequest)]);
     }
 
     /**
