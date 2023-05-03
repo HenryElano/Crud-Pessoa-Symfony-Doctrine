@@ -1,8 +1,21 @@
 {%extends 'base.html.twig'%}
 {%block title%} {{titulo}} {%endblock%}
 {%block body%}
-<h1>{{titulo}}</h1>
-<p>{{msg}}</p>
-{{ form(form) }}
-<a href="{{ path('consultaPessoas')}}" class='btn btn-info'>Voltar</a>
+
+    {% for msg in app.flashes('alerta') %}
+        <div class="alert alert-warning" role="alert">
+            {{ msg }}
+        </div>
+    {% endfor %}
+
+    {% for msg in app.flashes('sucesso') %}
+        <div class="alert alert-success" role="alert">
+            {{ msg }}
+            <a href="{{ path('consultaPessoas') }}" class="btn btn-primary">Consultar Pessoas</a>
+        </div>
+    {% endfor %}
+
+    <h1 class="display-6 small text-center"> {{titulo}} </h1>
+    
+    {{ form(form)}}
 {% endblock %}

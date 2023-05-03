@@ -1,6 +1,16 @@
 {%extends 'base.html.twig'%}
 {%block title%} {{titulo}} {%endblock%}
 {%block body%}
-<h1>{{titulo}}</h1>
-{{ form(form) }}
+
+    {% for msg in app.flashes('sucesso') %}
+        <div class="alert alert-success" role="alert">
+            {{ msg }}
+            <a href="{{ path('consultaContatos') }}" class="btn btn-primary"> '{{titulo}} '</a>
+        </div>
+    {% endfor %}
+    
+    <h1 class="display-6 small text-center" style='font-weight: bold'>{{titulo}}</h1>
+
+    {{ form(form)}}
+
 {% endblock %}

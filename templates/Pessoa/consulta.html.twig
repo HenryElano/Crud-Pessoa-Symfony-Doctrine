@@ -1,30 +1,37 @@
 {%extends 'base.html.twig'%}
 {%block title%} {{titulo}} {%endblock%}
 {%block body%}
-<h1>{{titulo}}</h1>
-<a href='{{ path('pessoaInserir') }}' class='btn btn-primary'>Incluir Nova Pessoa</a>
-<table class='table'border="1px solid black">
-    <thead>
-        <tr>
-            <td style='font-weight: bold'>Id</td>
-            <td style='font-weight: bold'>Nome</td>
-            <td style='font-weight: bold'>CPF</td>
-            <td style='font-weight: bold'>Ações</td>
-        </tr>
-    </thead>
-    <tbody>
-    {% for pessoa in pessoas %}
-        <tr>
-            <td>{{pessoa.id}}</td>
-            <td>{{pessoa.nome}}</td>
-            <td>{{pessoa.cpf}}</td>
-            <td>
-                <a href='{{ path('pessoaEditar', {id: pessoa.id}) }}' class='btn btn-primary'>Editar</a>
-                <a href='{{ path('pessoaExcluir', {id: pessoa.id}) }}' class='btn btn-primary'>Excluir</a>
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+    <h1 class="display-6 small text-center"> {{titulo}} </h1>
+    <a href='{{ path('pessoaInserir') }}' class='btn btn-primary' style='margin: 5px 0'>Incluir Nova Pessoa</a>
+
+    <form method='GET'>
+        <label style='font-weight: bold'fonte->Pesquisar Pelo Nome:</label>
+        <input type='text' name='nome' class='form-control' value='{{nomePessoa}}'/>
+        <button type='submit' class='btn btn-primary' style='margin: 5px 0'>Pesquisar</button>
+    </form>
+
+    <table class='table' border="1px solid black">
+        <thead>
+            <tr>
+                <td style='font-weight: bold'>Id</td>
+                <td style='font-weight: bold'>Nome</td>
+                <td style='font-weight: bold'>CPF</td>
+                <td style='font-weight: bold'>Ações</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pessoa in pessoas %}
+            <tr>
+                <td>{{pessoa.id}}</td>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.cpf}}</td>
+                <td>
+                    <a href='{{ path('pessoaEditar', {id: pessoa.id}) }}' class='btn btn-primary'>Editar</a>
+                    <a href='{{ path('pessoaExcluir', {id: pessoa.id}) }}' class='btn btn-primary'>Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}

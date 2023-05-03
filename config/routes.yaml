@@ -1,31 +1,35 @@
+home:
+    path: / 
+    controller: App\Controller\ControllerHome::index
+
 consultaPessoas:
     path: /consultaPessoas
-    controller: App\Controller\ControllerPessoa::consultaPessoas
+    controller: App\Controller\ControllerConsultaPessoa::consultarPessoas
 
 pessoaInserir:
     path: /pessoa/inserir
-    controller: App\Controller\ControllerPessoa::inserir
+    controller: App\Controller\ControllerManutencaoPessoa::inserir
 
 pessoaEditar:
     path: /pessoa/editar/{id}
-    controller: App\Controller\ControllerPessoa::editar
+    controller: App\Controller\ControllerManutencaoPessoa::editar
 
 pessoaExcluir:
     path: /pessoa/excluir/{id}
-    controller: App\Controller\ControllerPessoa::excluir
+    controller: App\Controller\ControllerManutencaoPessoa::excluir
 
 consultaContatos:
     path: /consultaContatos
-    controller: App\Controller\ControllerContato::consultaContatos
+    controller: App\Controller\ControllerConsultaContato::consultarContatos
 
 contatoInserir:
     path: /contato/inserir
-    controller: App\Controller\ControllerContato::inserir
+    controller: App\Controller\ControllerManutencaoContato::inserir
 
 contatoEditar:
     path: /contato/editar/{id}
-    controller: App\Controller\ControllerContato::editar
+    controller: App\Controller\ControllerManutencaoContato::editar
 
 contatoExcluir:
     path: /contato/excluir/{id}
-    controller: App\Controller\ControllerContato::excluir
+    controller: App\Controller\ControllerManutencaoContato::excluir

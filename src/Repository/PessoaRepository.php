@@ -34,6 +34,14 @@ class PessoaRepository extends ServiceEntityRepository {
         }
     }
 
+    public function findByNome($sNome) {
+        return  $this->createQueryBuilder('p')
+            ->where('p.nome LIKE :nome')
+            ->setParameter('nome', "%$sNome%")
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Pessoa[] Returns an array of Pessoa objects
 //     */
